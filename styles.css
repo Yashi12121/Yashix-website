@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000; /* พพื้นหลังสีดำ */
+    font-family: 'Roboto', sans-serif;
+    color: #fff; /* ข้อความสีขาว */
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-box {
+    background: rgba(255, 255, 255, 0.1); /* พพื้นหลังสีเทาอ่อนโปร่งแสง */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* เงาสีขาว */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.logo {
+    font-size: 72px;
+    color: #fff; /* โลโก้สีขาว */
+    font-family: 'Impact', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* เงาสีขาว */
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #fff; /* หัวข้อสีขาว */
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* เงาสีขาว */
+}
+
+.subtitle {
+    color: #ccc; /* สีเทา */
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-shadow: 0 0 3px rgba(204, 204, 204, 0.1); /* เงาสีเทา */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #333; /* กล่องใส่ข้อมูลสีเทาดำ */
+    color: #fff; /* ข้อความในกล่องสีขาว */
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* เงาสีขาวเมื่อโฟกัส */
+}
+
+.animate-input {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.animate-input:focus {
+    transform: scale(1.02);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff; /* ปุ่มสีขาว */
+    color: #000; /* ข้อความในปุ่มสีดำ */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4); /* เงาสีขาว */
+}
+
+.auth-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6); /* เงาสีขาวเข้มขึ้น */
+    background: #ccc; /* สีเทาเมื่อโฮเวอร์ */
+}
+
+.animate-btn {
+    transition: transform 0.3s, background 0.3s;
+}
+
+.switch-text {
+    color: #ccc; /* สีเทา */
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.switch {
+    color: #fff; /* สีขาว */
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.switch:hover {
+    color: #ccc; /* สีเทาเมื่อโฮเวอร์ */
+}
+
+.animate-switch {
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.error {
+    color: #ff4444; /* ข้อความผิดพลาดสีแดง (ยังคงไว้เพื่อความชัดเจน) */
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.remember-me {
+    margin: 10px 0;
+    text-align: left;
+    color: #fff;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.background-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5); /* พarticle สีขาวโปร่งแสง */
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); opacity: 0.5; }
+    50% { transform: translateY(-50px) translateX(30px); opacity: 1; }
+    100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+}

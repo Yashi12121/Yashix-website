@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YashiX - Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap'); /* ฟอนต์เท่ ๆ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000; /* พื้นหลังสีดำล้วน */
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 60px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: pulse 2s infinite;
+            letter-spacing: 3px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
+            50% { transform: scale(1.05); text-shadow: 0 0 25px rgba(255, 255, 255, 0.7); }
+        }
+
+        .nav-menu {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #ccc;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-content h1 {
+            font-size: 60px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            letter-spacing: 3px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .download-btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #fff, #ccc); /* Gradient ขาว-เทา */
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4);
+            background: linear-gradient(135deg, #ccc, #fff);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .background-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0.6; }
+            50% { transform: translateY(-50px) translateX(30px); opacity: 1; }
+            100% { transform: translateY(0) translateX(0); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">YX</div>
+    </div>
+    <div class="nav-menu">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#sources">Sources</a>
+        <a href="https://discord.gg/jXJta9VT7U" target="_blank">Discord</a>
+    </div>
+    <div class="main-content">
+        <h1>YashiX</h1>
+        <p>Dive in and explore the world of all the YashiX projects!</p>
+        <a href="https://files.catbox.moe/d7zxkr.rar" class="download-btn" download>Download YashiX</a>
+    </div>
+
+    <div class="background-particles">
+        <script>
+            function createParticles(count) {
+                const particlesContainer = document.querySelector('.background-particles');
+                for (let i = 0; i < count; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    particle.style.top = Math.random() * 100 + 'vh';
+                    particle.style.animationDelay = Math.random() * 5 + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            window.onload = function() {
+                createParticles(50);
+            };
+        </script>
+    </div>
+</body>
+</html>
